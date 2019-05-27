@@ -1,0 +1,11 @@
+bed_1 = "You turn your attention to the bed. It’s a twin-sized mattress, covered with a gray flannel blanket and a single pillow, and it rests on a stout metal frame that looks like it belongs in a hostel or a barrack or…a prison. Yikes." 
+pillow_message_1 = "You look closer at the pillow. There's a mint laid out on top. Your breath is pretty funky. Eat it, y/n?"
+pillow_message_2 = 'You pop it in your mouth and crunch down. Your last thought before passing out is, "Not very minty, is it?"'
+pillow_message_3 = "You wake in a dark, fetid pit and roll over to see...a thing. It's horrifying. It's beyond words...you can feel your sanity breaking apart as the thing opens it's maw."
+pillow_message_4 = "You were eaten by an eldritch god. Big House's ratings just went up another percent."
+pillow_message_5 = "You eye it suspiciously. Mama always said there was no such thing as free candy. You flick it away and lift the pillow. Nothing's there. Back to the search."
+blanket_message = "You lift up the blanket, and shake it out. Nothing's here. It does look cozy though. You wrap it around your shoulders. Ah. That's better."
+blanket_message_2 = "The bed looks even sadder without the blanket. You're still not giving it back."
+under_bed_message_1 = "The floor underneath the bed is covered in dust bunnies and nothing else. But you crawl under anyway and feel along the underside with your hand. You strike something sharp wedged between the slats. It's the tip of a screwdriver. You scrabble with your fingertips, trying to pull it through but the slats are too narrow to get a grip."
+under_bed_message_2 = "Yep. Nothing under here but dust bunnies."
+under_mattress_message = "You lift up the thin mattress, retching a little when you see the dark brown stains underneath. It looks like blood. But no time to focus on that. There, so thin it's barely noticeable, is a screwdriver shoved between the slats. You pry it out and stick it in the tastefully hidden pocket of your evening wear. This could come in handy."

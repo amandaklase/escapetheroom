@@ -1,0 +1,6 @@
+tablet_description_1 = "You retrieve the tablet from where you dropped it earlier. It's name brand but several generations old. Names have been scratched into the back in a variety of handwriting. Anna. Tim. Maritza. Dante. All names of past The Big House contestants. The ones who didn't make the reunion episodes. Fear rises in your chest. You shove it back down. Those people were not competitors. Not like you." 
+tablet_description_2 = "You exit out of the PA's video to the home screen. It's in airplane mode. The settings are password-locked. You aren't getting a message out to anyone on this hunk of junk. You scroll through empty page after empty page. Just when you're ready to give up, you find a single app, five pages deep."
+app_1 = "The app's icon is black with an image of a white outlined figure that looks kind of like a cross between an octopus and a pissed-off badger."
+app_2 = "You click on it. When it loads, you see it's a game."
+app_3 = "Yeah, sure. It's not like you've got anything else going on. You ready your tapping finger."
+mini_game_message = "You, a nobody voted off a reality show, find yourself offered as a sacrifice to Lord Shaavoth. You have a pistol. It won't be enough. Accept your fate, mortal or try to escape."

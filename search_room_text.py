@@ -1,0 +1,1 @@
+room_description = "You look around. The room is sparsely furnished. The tablet lays on the floor where you left it. A cot is shoved against the back corner. On the right wall stands an end table with a vase of flowers. On the left hangs an oil painting. And in the front of the room, a door awaits. Which would you like to search?"
