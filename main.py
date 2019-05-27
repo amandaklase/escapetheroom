@@ -12,7 +12,7 @@ import search_art_text
 import search_tablet_text
 
 ############# BIG HOUSE BREAKOUT ###############
-#This is a text-based escape the room game. #
+#This is a text-based escape the room game.#
 
 
 # (this is for my reference, so I remember all the items I want to hide around the room and is not used in code) game_inventory = ["key", "eye", "box", "screwdriver", "glass shard", "note", "blanket", "artist's name", "code"]
