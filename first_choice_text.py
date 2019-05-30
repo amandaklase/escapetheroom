@@ -8,6 +8,6 @@ tablet_message_4 = '"Look, you don’t have much time. I couldn’t leave the ke
 
 tablet_no_1 = "You ignore the tablet. It's annoying and you're so tired. You deserve a nap. Everything will seem clearer when  you wake."
             
-tablet_no_2 = "You wake in a dark, fetid pit and roll over to see...a thing. It's horrifying. It's beyond words...you can feel your sanity breaking apart as the thing opens it's maw."
+tablet_no_2 = "You wake in a dark, fetid pit and roll over to see...a thing. It's horrifying. It's beyond words...you can feel your sanity breaking apart as the thing opens its maw."
 
 tablet_no_3 = "You were eaten by an eldritch god. Big House's ratings just went up another percent."

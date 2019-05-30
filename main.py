@@ -10,6 +10,7 @@ import search_bed_text
 import search_end_table_text
 import search_art_text
 import search_tablet_text
+from check_exit import check_exit
 
 ############# BIG HOUSE BREAKOUT ###############
 #This is a text-based escape the room game.#
@@ -90,9 +91,9 @@ def story(user_name, user_home):
     keep_going = input("\nPress RETURN to continue")
     print ("\nWhat the hell’s going on here?")
     format_text(story_text.start_message_4)
-    first_choice(user_home)
+    first_choice(user_home, user_name)
     
-def first_choice(user_home):
+def first_choice(user_home, user_name):
 
     ### This contains the first choice the user makes and either gives more story or has a game over condition, depending on what she chooses. It also allows the user to choose to start searching the room.###
 
@@ -121,10 +122,10 @@ def first_choice(user_home):
 
             start_search = input("\nPress RETURN to search the room.")
 
-            search_room("user_name")
+            search_room(user_name)
 
 
-        if tablet == "b":
+        elif tablet == "b":
 
             format_text(first_choice_text.tablet_no_1)
             ignore_tablet = input("\nPress RETURN to continue.")
@@ -133,17 +134,16 @@ def first_choice(user_home):
            
             print ("\nGAME OVER")
 
-            try_again = input("\nWould you like to play again, y/n? ")
+            try_again = input("\nWould you like to play again? Type 'quit' to end game. ")
 
-            if try_again == "y":
+            if try_again == "quit":
+                check_exit(try_again)  
+            
+            else:
                 play_game()
-                return
 
-            elif try_again == "n":
-                sys.exit("GAME OVER")
-
-        if tablet == "quit":
-            sys.exit("GAME OVER")
+        elif tablet == "quit":
+            check_exit(tablet)
 
         else:
             print ("The only options are a or b, friend. Unless you'd like to quit? Type 'quit' to end game. ")   
@@ -152,13 +152,13 @@ def search_room(user_name):
 
     ### This function allows the user to pick different general areas of the room to search ###
     
-    contents_of_room = {"a.":"door", "b.":"bed", "c.":"end table", "d.":"painting", "e.":"tablet", "f.":"quit"}
+    contents_of_room = {"a.":"door", "b.":"bed", "c.":"end table", "d.":"painting", "e.":"tablet", "quit.":"quit"}
     
     format_text(search_room_text.room_description)
     print ("\n")
 
     if "box" in user_inventory:
-        contents_of_room["g."] = "try to open box"
+        contents_of_room["f."] = "try to open box"
     
     for content in contents_of_room:
         print (content, contents_of_room[content])
@@ -184,14 +184,9 @@ def search_room(user_name):
             search_tablet(user_name)
 
         if direction_to_search == "quit":
-            print ("Are you sure you want to quit? Any progress will be lost.")
-            sure = input("> ")
-            if sure == "y":
-                sys.exit("GAME OVER")
-            else:
-                search_room(user_name)
+            check_exit(direction_to_search)
                 
-        if direction_to_search == "g":
+        if direction_to_search == "f":
             open_box(user_name)
 
         else:
@@ -214,14 +209,39 @@ def search_door(user_name):
             another_search = input("You'll try the door again when you have a plan. Press RETURN to search somewhere else. ")
             search_room(user_name)
         
-    if len(user_inventory) > 0:
+    elif len(user_inventory) > 0:
         lock_search = input("Try the lock with some of the items you've found, y/n?: ")
         lock_search = lock_search.lower()
 
         if lock_search == "y" and "keycard" in user_inventory:
             format_text(search_door_text.first_lock)
             
-            if "eye" in user_inventory:
+            if "eye" in user_inventory and "blanket" in user_inventory:
+                format_text(search_door_text.second_lock)
+                time.sleep (2)
+
+                print ('"Identity confirmed, Mike Shapiro. All hail Shaavoth."\n\nYou hold your breath as you try the handle...')
+                
+                format_text(search_door_text.no_blanket_1)
+                keep_going = input("\nPress RETURN to continue ")
+                format_text(search_door_text.no_blanket_2)
+                keep_going = input("\nPress RETURN to continue ")
+                format_text(search_door_text.no_blanket_3)
+                keep_going = input("\nPress RETURN to continue ")
+                
+
+                if "note" not in user_inventory:
+                    format_text(search_door_text.no_blanket_5)
+                    format_text(search_door_text.no_blanket_6)
+                
+                format_text(search_door_text.no_blanket_4)
+
+                again = input("Would you like to play again? Type 'quit' to exit: ")
+                again = again.lower()
+
+                check_exit(again)
+
+            elif "eye" in user_inventory and "blanket" not in user_inventory:
                 format_text(search_door_text.second_lock)
                 time.sleep (2)
 
@@ -230,8 +250,7 @@ def search_door(user_name):
                 again = input("Would you like to play again? Type 'quit' to exit: ")
                 again = again.lower()
 
-                if again == "quit":
-                    sys.exit("GAME OVER")
+                check_exit(again)
 
             else:
                 format_text(search_door_text.no_eye)
@@ -274,9 +293,15 @@ def search_bed(user_name):
             eat_mint = eat_mint.lower()
 
             if eat_mint == "y":
-                format_text(search_bed_text.pillow_message_2)
-                format_text(search_bed_text.pillow_message_3)
-                format_text(search_bed_text.pillow_message_4)
+                if "note" in user_inventory:
+                    format_text(search_bed_text.pillow_message_2)
+                    format_text(search_bed_text.pillow_message_3)
+                    format_text(search_bed_text.pillow_message_4)
+                if "note" not in user_inventory:
+                    format_text(search_bed_text.pillow_message_2)
+                    format_text(search_bed_text.pillow_message_3)
+                    format_text(search_door_text.no_blanket_5)
+                    format_text(search_bed_text.pillow_message_4)
 
                 print ("GAME OVER")
 
@@ -320,7 +345,7 @@ def search_bed(user_name):
             search_room(user_name)
 
         elif user_action == "quit":
-            sys.exit("GAME OVER")
+            check_exit(user_action)
 
         else: 
             print ("This does nothing.")
@@ -344,7 +369,10 @@ def search_end_table(user_name):
         user_action = input("> ")
         user_action = user_action.lower()
 
-        if user_action == "a" and "glass shard" not in user_inventory:
+        if user_action == "a" and "glass shard" in user_inventory:
+            print ("\nNothing left to smash here.")
+
+        elif user_action == "a" and "note" not in user_inventory:
             format_text(search_end_table_text.vase_message_1)
             format_text(search_end_table_text.vase_message_2)
 
@@ -353,7 +381,13 @@ def search_end_table(user_name):
 
             if red_paper == "y":
                 format_text(search_end_table_text.paper_message_1)
-                format_text(search_end_table_text.paper_message_2) 
+                eat_it = input("Eat the paper, y/n? ")
+                eat_it = eat_it.lower()
+                if eat_it == "y":
+                    format_text(search_end_table_text.paper_message_4)
+                    user_inventory.append("note")
+                if eat_it == "n":
+                    format_text(search_end_table_text.paper_message_2) 
 
             elif red_paper == "n":
                 format_text(search_end_table_text.paper_message_3)
@@ -370,8 +404,18 @@ def search_end_table(user_name):
             elif break_vase == "n":
                 format_text(search_end_table_text.vase_message_5)
         
-        elif user_action == "a" and "glass shard" in user_inventory:
-            print ("\nNothing left to smash here.")
+        elif user_action == "a" and "note" in user_inventory:
+            format_text(search_end_table_text.vase_message_3)
+            
+            break_vase = input("Smash the vase, y/n? ")
+            break_vase = break_vase.lower()
+
+            if break_vase == "y":
+                format_text(search_end_table_text.vase_message_4)
+                user_inventory.append("glass shard")
+
+            elif break_vase == "n":
+                format_text(search_end_table_text.vase_message_5)
         
         elif user_action == "b":
             format_text(search_end_table_text.underneath_table_message)
@@ -421,7 +465,7 @@ def search_end_table(user_name):
             search_room(user_name)
         
         elif user_action == "quit":
-            sys.exit("GAME OVER")
+            check_exit(user_action)
         
         else: 
             print ("\ninvalid choice.")
@@ -518,21 +562,6 @@ def search_art(user_name):
             format_text(search_art_text.frame_2)
             format_text(search_art_text.frame_3)
 
-            search_wallpaper = input("Look at inventory, y/n? ")
-            search_wallpaper = search_wallpaper.lower()
-
-            if search_wallpaper == "y":
-                inventory_search(list_of_items_usable_on_object_1_4, user_name)
-                format_text(search_art_text.frame_5)
-                format_text(search_art_text.frame_6)
-
-            elif search_wallpaper == "n":
-                print ("Okay.")
-                search_room(user_name)
-            
-            else:
-                print ("invalid choice")
-        
         elif user_action == "b" and "keycard" not in user_inventory and "glass shard" in user_inventory:
             
             format_text(search_art_text.frame_1)
@@ -565,7 +594,7 @@ def search_art(user_name):
             search_room(user_name)
         
         elif user_action == "quit":
-            sys.exit("GAME OVER")
+            check_exit(user_action)
         
         else: 
             print ("invalid choice")
@@ -694,6 +723,7 @@ def play_mini_game():
     user_inventory.append("code is 96431")
 
 play_game()
+
 
 
 

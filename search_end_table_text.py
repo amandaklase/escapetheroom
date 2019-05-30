@@ -7,6 +7,7 @@ vase_message_5 = "You may be trapped but you're not a savage. You leave the vase
 paper_message_1 = 'You unfurl the scrap of paper and read "The door lock has two components. Be careful. Eyes are watching you. Eat this message after reading."' 
 paper_message_2 = "You raise an eyebrow. 'Eat it?' Like, you're grateful for the PA's help but not paper-eating grateful. Maybe if she'd written something helpful like WHERE THE FREAKING KEYS ARE instead of creepy notes, you'd be hungrier. You put it back where you found it."
 paper_message_3 = "You wouldn't touch that rose even if there was a crisp $100 bill nestled behind every petal."
+paper_message_4 = "You stuff the paper in your mouth. It's the texture of expired Big League Chew and tastes like...wet paper. Ew."
 search_vent_message = "You slide the table away from the wall and take a closer look at the vent. It's too small for a person but just the right size for a hiding spot. Too bad the front panel is bolted to the wall with four screws."
 vent_message_2 = "You need to find something to get this panel off."
 vent_message_3 = "Hmm...is there anything in your pocket that might help?"

@@ -1,8 +1,13 @@
 door_message_1 = "The door is solid steel. An electronic panel with a small protruding lens is inset into the wall next to the door."
-
 door_message_2 = " You try the handle. Locked. You kick and pound on the door, hurting nothing but your own bare feet against the steel. No one hears your screams, or if they do,they aren't coming." 
 door_message_3 = "Remember how you always told the confessional camera that you didn't come to the Big House to make friends? Mission accomplished. You've got to find your own way out."
 first_lock = 'You press the keycard against the panel which emits a pleasant beep and lights up green. Then, it speaks: "Standing by for retinal scan."'
 second_lock = "You remove the eye from its box and try not to think about the way it wetly squishes against your fingertips as you hold it up to the scanner. Your stomach churns as a bright flash scans over the eye. The door is whirring. Is it a good whir?..."
 no_eye = 'The door waits a moment, before beeping a sharp rebuke. "Scan failed," it gloats. "Door locked." UGH! There has to be a way to bypass this thing...'
 no_key = "You lift the eye to the scanner. The lock panel continues to glow red. You try the handle. Locked. The eye is a good start but something is missing..."
+no_blanket_1 = "The door swings open. You whoop and step through and straight into the muscled chest of Stan, the house security guard. Only instead of his usual mall cop duds, he's wearing a robe that wouldn't look out of place on a Rosemary's Baby extra. He grabs your arm roughly."
+no_blanket_2 = '''"Lord Shaavoth's creeping tentacles! Can't a man take a nap anymore without finding his sacrifices just wandering around? You almost got away from me. Lucky the camera's always watching, eh?" He nods in the direction of the painting. "No matter. You was supposed to be dinner but the master does enjoy a late lunch."'''
+no_blanket_3 = "You stomp on Stan's foot and try to pull away, hollering that you're too much of an audience favorite to die. At least not this early. The only answer he gives is a meaty fist. You slip into darkness and when you slip out of it again you find yourself in a dark, fetid pit. Rolling over, you see a...a thing. It's horrifying. It's beyond words...you can feel your sanity breaking apart as the thing opens its maw."
+no_blanket_4 = "You were eaten by an eldritch god. Big House's ratings just went up another percent."
+no_blanket_5 = '''You hear someone screaming and you distantly think it must be yourself until you see the PA tied up next to you. She catches sight of you and struggles harder against her bonds. "You...you didn't throw away the note, did you? I trusted you! I tried to help you, you monster!"'''
+no_blanket_6 = "Oh. Yeah. But in your defense eating paper is gross. You avoid her eyes as a tentacle snatches her away. Maybe Lord Shaavoth will be satisfied with a light snack?"
